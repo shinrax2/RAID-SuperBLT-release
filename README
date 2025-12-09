@@ -1,0 +1,9 @@
+script to automate building and packaging of RAID-SuperBLT
+
+requirements:
+git
+cmake
+running under Visual Studio 'x64 Native Tools Command Prompt'
+
+usage:
+python release.py
