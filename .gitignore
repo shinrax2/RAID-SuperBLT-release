@@ -1,4 +1,6 @@
 base/
 dll/
 tmp/
+RAID-SuperBLT/
+RAID-SuperBLT-Lua/
 *.zip
