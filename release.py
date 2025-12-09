@@ -2,6 +2,14 @@
 import shutil
 import os
 import sys
+import stat
+from pathlib import Path
+
+# helper code
+def readonly_to_writable(foo, file, err):
+    if Path(file).suffix in ['.idx', '.pack'] and 'PermissionError' == err[0].__name__:
+        os.chmod(file, stat.S_IWRITE)
+        foo(file)
 
 # dirs
 dll = "RAID-SuperBLT"
@@ -28,13 +36,13 @@ if vc_vars_x64 == False:
 # clean up/prep
 
 if os.path.exists(dll):
-    shutil.rmtree(dll)
+    shutil.rmtree(dll, onerror=readonly_to_writable)
 
 if os.path.exists(base):
-    shutil.rmtree(base)
+    shutil.rmtree(base, onerror=readonly_to_writable)
 
 if os.path.exists(tmp):
-    shutil.rmtree(tmp)
+    shutil.rmtree(tmp, onerror=readonly_to_writable)
 else:
     os.mkdir(tmp)
 
