@@ -97,7 +97,7 @@ shutil.copy2("tmp/SBLT_DLL_UPDATER.exe", "tmp/iphlpapi_rel/updater")
 shutil.make_archive("RAID-SuperBLT_IPHLPAPI", "zip", root_dir="tmp/iphlpapi_rel")
 
 # autoupdate base
-shutil.copytree("tmp/base", "tmp/auto_base")
+shutil.copytree("tmp/base", "tmp/auto_base/base")
 shutil.make_archive("AutoUpdate_base", "zip", root_dir="tmp/auto_base")
 
 # autoupdate wsock32
