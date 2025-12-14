@@ -97,7 +97,6 @@ shutil.copy2("tmp/SBLT_DLL_UPDATER.exe", "tmp/iphlpapi_rel/updater")
 shutil.make_archive("RAID-SuperBLT_IPHLPAPI", "zip", root_dir="tmp/iphlpapi_rel")
 
 # autoupdate base
-os.mkdir("tmp/auto_base")
 shutil.copytree("tmp/base", "tmp/auto_base")
 shutil.make_archive("AutoUpdate_base", "zip", root_dir="tmp/auto_base")
 
@@ -113,5 +112,5 @@ shutil.make_archive("AutoUpdate_iphlpapi", "zip", root_dir="tmp/auto_iphlpapi")
 
 # autoupdate updater
 os.mkdir("tmp/auto_updater")
-shutil.copy2("tmp/SBLT_DLL_UPDATER.dll", "tmp/auto_updater/")
+shutil.copy2("tmp/SBLT_DLL_UPDATER.exe", "tmp/auto_updater/")
 shutil.make_archive("AutoUpdate_updater", "zip", root_dir="tmp/auto_updater")
