@@ -55,8 +55,8 @@ os.system(f"git clone {base_repo} {base}")
 os.chdir(dll)
 os.mkdir("build")
 os.chdir("build")
-os.system("cmake -S .. -A x64 -G \"Visual Studio 17 2022\" -DCMAKE_BUILD_TYPE=Release") # configure
-os.system("msbuild SuperBLT.sln /t:Build /p:Configuration=Release") # build
+os.system("cmake .. -A x64 -G \"Visual Studio 18 2026\"") # configure
+os.system("cmake --build . --config Release") # build
 os.chdir(root)
 shutil.copy2(os.path.join(dll, "build/Release/IPHLPAPI.dll"), tmp)
 shutil.copy2(os.path.join(dll, "build/Release/WSOCK32.dll"), tmp)
